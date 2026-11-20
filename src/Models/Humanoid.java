@@ -1,3 +1,5 @@
+package Models;
+
 public abstract class Humanoid {
     // Privates variables
     private String name;

@@ -1,3 +1,5 @@
+package Models;
+
 public class Food {
     // Privates variables
     private String name;
