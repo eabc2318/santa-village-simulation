@@ -1,6 +1,6 @@
-package Characters;
+package fr.amu.iut.noel.character;
 
-import Models.Humanoid;
+import fr.amu.iut.noel.model.Humanoid;
 
 public class EnfantVisiteur extends Humanoid {
     public EnfantVisiteur(String name, String gender, int age) {
