@@ -1,4 +1,4 @@
-package fr.amu.iut.noel.character;
+package fr.amu.iut.noel.creatures;
 
 import fr.amu.iut.noel.model.Humanoid;
 

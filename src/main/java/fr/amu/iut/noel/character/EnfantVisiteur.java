@@ -6,4 +6,8 @@ public class EnfantVisiteur extends Humanoid {
     public EnfantVisiteur(String name, String gender, int age) {
         super(name, gender, age);
     }
+
+    public void entertain() {
+        
+    }
 }

@@ -6,4 +6,12 @@ public class Lutin extends Humanoid {
     public Lutin(String name, String gender, int age) {
         super(name, gender, age);
     }
+
+    public void entertain() {
+        
+    }
+
+    public void work() {
+        
+    }
 }
