@@ -1,4 +1,4 @@
-package Models;
+package fr.amu.iut.noel.model;
 
 public class Food {
     // Privates variables

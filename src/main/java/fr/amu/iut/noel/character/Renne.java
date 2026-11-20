@@ -1,6 +1,6 @@
-package Creatures;
+package fr.amu.iut.noel.character;
 
-import Models.Humanoid;
+import fr.amu.iut.noel.model.Humanoid;
 
 public class Renne extends Humanoid {
     public Renne(String name, String gender, int age) {
