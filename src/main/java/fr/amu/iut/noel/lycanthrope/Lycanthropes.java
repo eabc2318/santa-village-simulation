@@ -1,4 +1,6 @@
-public class Lycanthrope{
+package fr.amu.iut.noel.lycanthrope;
+
+public class Lycanthropes {
 
     public static final String SOLITAIRE = "solitaire";
 
@@ -12,7 +14,7 @@ public class Lycanthrope{
     private double impetuosite; 
     private String meute; 
 
-    public Lycanthrope(
+    public Lycanthropes(
             String nom,
             Sexe sexe,
             CategorieAge categorieAge,
@@ -28,17 +30,21 @@ public class Lycanthrope{
         this.sexe = sexe;
         this.categorieAge = categorieAge;
         this.force = force;
-        this.dominationsExercees = 
-        this.dominationsSubies = 
+        this.dominationsExercees = dominationsExercees;
+        this.dominationsSubies = dominationsSubies;
         setMeute(meute, rang);
         this.impetuosite = impetuosite;
     }
 
-    public enum sexe{
+    public void setMeute(String meute, int rang) {
+        this.meute = meute;
+        this.rang = rang;
+    }
+
+    public enum Sexe {
         MALE,
         FEMELLE,
         BISEXUELLE
-
     }
 
     public enum CategorieAge {
@@ -46,6 +52,15 @@ public class Lycanthrope{
         ADULTE(1.0),
         VIEUX(2.0);
 
+        private final double factor;
+
+        CategorieAge(double factor) {
+            this.factor = factor;
+        }
+
+        public double getFactor() {
+            return factor;
+        }
     }
 
    
