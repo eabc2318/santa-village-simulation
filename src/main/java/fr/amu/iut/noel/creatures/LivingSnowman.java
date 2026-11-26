@@ -1,9 +1,10 @@
 package fr.amu.iut.noel.creatures;
 
 import fr.amu.iut.noel.model.Humanoid;
+import fr.amu.iut.noel.model.Gender;
 
 public class LivingSnowman extends Humanoid {
-    public LivingSnowman(String name, String gender, int age) {
+    public LivingSnowman(String name, Gender gender, int age) {
         super(name, gender, age);
     }
 }

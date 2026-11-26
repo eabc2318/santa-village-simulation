@@ -3,14 +3,14 @@ package fr.amu.iut.noel.model;
 public abstract class Humanoid {
     // Privates variables
     private String name;
-    private String gender;
+    private Gender gender;
     private int age;
     private int hunger;
     private int tiredness;
     private int xmasMagic;
 
     // Constructor
-    public Humanoid(String name, String gender, int age) {
+    public Humanoid(String name, Gender gender, int age) {
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -39,7 +39,7 @@ public abstract class Humanoid {
     public String getName() {
         return name;
     }
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
     public int getAge() {
@@ -58,7 +58,7 @@ public abstract class Humanoid {
     public void setName(String name) {
         this.name = name;
     }
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
     public void setAge(int age) {

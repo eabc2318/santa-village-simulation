@@ -1,9 +1,10 @@
 package fr.amu.iut.noel.character;
 
 import fr.amu.iut.noel.model.Humanoid;
+import fr.amu.iut.noel.model.Gender;
 
 public class ElfePostier extends Humanoid {
-    public ElfePostier(String name, String gender, int age) {
+    public ElfePostier(String name, Gender gender, int age) {
         super(name, gender, age);
     }
 
