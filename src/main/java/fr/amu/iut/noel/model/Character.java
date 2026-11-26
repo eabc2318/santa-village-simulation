@@ -9,7 +9,8 @@ public abstract class Character {
     private int tiredness;
     private int xmasMagic;
 
-    public final int C_baseMagic = 5;
+    public final int C_activiteMagic = 5; // Magie gagné lorsque un character réalise son activité
+    public final int C_farceMagic = 1; // Magie modifié lorsque un character voit une farce
 
     // Constructor
     public Character(String name, Gender gender, int age) {
@@ -28,6 +29,9 @@ public abstract class Character {
     public void doActivity() {} // Pour faire une activité (se reposer est une activité)
     public void modifyXmasMagic(int amount) {
         xmasMagic += amount;
+        if (xmasMagic < 0) {
+            xmasMagic = 0;
+        }
     } // Pour modifier la magie de Noël
 
     public void eat(Food food) {
@@ -36,6 +40,8 @@ public abstract class Character {
             hunger = 0;
         }
     } // Pour manger de la nourriture
+
+    abstract public void voir_farce(Farce farce); // Pour voir une farce
 
     // Getters & setters
     public String getName() {

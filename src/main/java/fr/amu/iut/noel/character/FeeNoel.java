@@ -9,7 +9,7 @@ public class FeeNoel extends Humanoid implements Divertissable, Travaillable {
     }
 
     public void entertain() {
-        super.modifyXmasMagic(super.C_baseMagic);
+        super.modifyXmasMagic(super.C_activiteMagic);
     }
     public void work() {
         System.out.println("Travaille..");

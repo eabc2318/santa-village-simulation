@@ -10,6 +10,6 @@ public class EnfantVisiteur extends Humanoid implements Divertissable {
 
     public void entertain() {
         // Les enfants visiteurs se divertissent partout donc leur magie de Noël compte double.
-        super.modifyXmasMagic(super.C_baseMagic*2);
+        super.modifyXmasMagic(super.C_activiteMagic*2);
     }
 }
