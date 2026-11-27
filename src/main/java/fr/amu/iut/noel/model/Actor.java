@@ -5,7 +5,7 @@ package fr.amu.iut.noel.model;
  *
  * @author Audren Metery-Drouin
  */
-public abstract class Character {
+public abstract class Actor {
     private String name;
     private Gender gender;
     private int age;
@@ -25,7 +25,7 @@ public abstract class Character {
      * @param gender the character's gender
      * @param age    the character's age
      */
-    public Character(String name, Gender gender, int age) {
+    public Actor(String name, Gender gender, int age) {
         this.name = name;
         this.gender = gender;
         this.age = age;

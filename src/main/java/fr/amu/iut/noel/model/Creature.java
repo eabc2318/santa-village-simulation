@@ -5,7 +5,7 @@ package fr.amu.iut.noel.model;
  *
  * @author Audren Metery-Drouin
  */
-public abstract class Creature extends Character {
+public abstract class Creature extends Actor {
     /**
      * Constructor of the {@code Creature} class.
      *
