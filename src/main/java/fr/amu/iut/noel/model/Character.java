@@ -1,11 +1,11 @@
 package fr.amu.iut.noel.model;
 
 /**
- * Gère les personnages du jeu qu'ils soient des humanoïdes ou des créatures.
+ * Base class managing characters in the game, whether they are humanoids or creatures.
+ *
  * @author Audren Metery-Drouin
  */
 public abstract class Character {
-    // Privates variables
     private String name;
     private Gender gender;
     private int age;
@@ -13,14 +13,17 @@ public abstract class Character {
     private int tiredness;
     private int xmasMagic;
 
-    public final int C_activiteMagic = 5; // Magie gagné lorsque un character réalise son activité
-    public final int C_farceMagic = 1; // Magie modifié lorsque un character voit une farce
+    /** Magic gained when a character performs an activity. */
+    public static final int ACTIVITY_MAGIC = 5;
+    /** Magic modified when a character witnesses a prank. */
+    public static final int PRANK_MAGIC = 1;
 
     /**
-     * Constructor of the Character class
-     * @param name le nom du character
-     * @param gender le genre du character
-     * @param age l'âge du character
+     * Constructor of the {@code Character} class.
+     *
+     * @param name   the character's name
+     * @param gender the character's gender
+     * @param age    the character's age
      */
     public Character(String name, Gender gender, int age) {
         this.name = name;
@@ -31,31 +34,32 @@ public abstract class Character {
         this.xmasMagic = 0;
     }
 
-    // Methods
     /**
-     * Permet d'émettre un son
+     * Emits a sound.
      */
     public void emitSound() {}
 
     /**
-     * Permet de se déplacer
+     * Moves the character.
      */
     public void move() {}
 
     /**
-     * Permet de se restaurer
+     * Restores the character's energy.
      */
     public void restore() {}
 
     /**
-     * Permet de réaliser une activité
-     * @param activity l'activité realisé
+     * Performs a given activity.
+     *
+     * @param activity the activity to perform
      */
     public void doActivity(Activity activity) {}
 
     /**
-     * Permet de modifier la magie de noël
-     * @param amount
+     * Modifies the character's Christmas magic, clamping it to a minimum of 0.
+     *
+     * @param amount the amount to add (or subtract if negative)
      */
     public void modifyXmasMagic(int amount) {
         xmasMagic += amount;
@@ -65,8 +69,9 @@ public abstract class Character {
     }
 
     /**
-     * Permet de manger de la nourriture
-     * @param food
+     * Feeds the character with the given food item, reducing hunger down to a minimum of 0.
+     *
+     * @param food the food item to eat
      */
     public void eat(Food food) {
         hunger -= food.getNutritionValue();
@@ -76,46 +81,116 @@ public abstract class Character {
     }
 
     /**
-     * Permet de voir une farce
-     * @param farce
+     * Reacts to witnessing a prank.
+     *
+     * @param prank the prank witnessed
      */
-    abstract public void voir_farce(Farce farce);
+    public abstract void witnessPrank(Prank prank);
 
-    // Getters & setters
+    /**
+     * Returns the character's name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
+
+    /**
+     * Returns the character's gender.
+     *
+     * @return the gender
+     */
     public Gender getGender() {
         return gender;
     }
+
+    /**
+     * Returns the character's age.
+     *
+     * @return the age
+     */
     public int getAge() {
         return age;
     }
+
+    /**
+     * Returns the character's hunger level.
+     *
+     * @return the hunger level
+     */
     public int getHunger() {
         return hunger;
     }
+
+    /**
+     * Returns the character's tiredness level.
+     *
+     * @return the tiredness level
+     */
     public int getTiredness() {
         return tiredness;
     }
+
+    /**
+     * Returns the character's Christmas magic level.
+     *
+     * @return the Christmas magic level
+     */
     public int getXmasMagic() {
         return xmasMagic;
     }
 
+    /**
+     * Sets the character's name.
+     *
+     * @param name the new name
+     */
     public void setName(String name) {
         this.name = name;
     }
+
+    /**
+     * Sets the character's gender.
+     *
+     * @param gender the new gender
+     */
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
+    /**
+     * Sets the character's age.
+     *
+     * @param age the new age
+     */
     public void setAge(int age) {
         this.age = age;
     }
+
+    /**
+     * Sets the character's hunger level.
+     *
+     * @param hunger the new hunger level
+     */
     public void setHunger(int hunger) {
         this.hunger = hunger;
     }
+
+    /**
+     * Sets the character's tiredness level.
+     *
+     * @param tiredness the new tiredness level
+     */
     public void setTiredness(int tiredness) {
         this.tiredness = tiredness;
     }
+
+    /**
+     * Sets the character's Christmas magic level.
+     *
+     * @param xmasMagic the new Christmas magic level
+     */
     public void setXmasMagic(int xmasMagic) {
         this.xmasMagic = xmasMagic;
     }

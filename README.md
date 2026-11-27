@@ -6,51 +6,53 @@
 ![JUnit5](https://img.shields.io/badge/JUnit-5-25A162?logo=junit5)
 ![JaCoCo](https://img.shields.io/badge/JaCoCo-Coverage-blue)
 
-HO HO HO venez gouter a mes biscuits au goût qualité de dev saupoudré d'un peu de javadoc et de CI avec du lait de README.
+HO HO HO! Come taste my cookies flavored with software quality, sprinkled with a bit of Javadoc and CI, served with a glass of README milk.
 
-## Commandes utiles
+## Useful Commands
 
 ```bash
-# Nettoyer le dossier target/
+# Clean the target/ directory
 mvn clean
 
-# Compiler le projet
+# Compile the project
 mvn compile
 
-# Lancer les tests unitaires + générer le rapport JaCoCo
+# Run unit tests + generate the JaCoCo coverage report
 mvn test
 
-# Générer la Javadoc
+# Generate the Javadoc
 mvn javadoc:javadoc
 ```
 
-### Consulter les rapports générés (dans `target/`)
+### Viewing Generated Reports (in `target/`)
 
-- **Couverture JaCoCo** : `target/site/jacoco/index.html`
-- **Javadoc** : `target/reports/apidocs/index.html`
+- **JaCoCo Coverage**: `target/site/jacoco/index.html`
+- **Javadoc**: `target/reports/apidocs/index.html`
 
-Pour les ouvrir directement dans le navigateur depuis le terminal :
+To open them directly in your browser from the terminal:
 
 ```bash
 xdg-open target/site/jacoco/index.html
 xdg-open target/reports/apidocs/index.html
 ```
 
-## Architecture du projet
+## Project Architecture
 
 ```text
 villageperenoel/
-├── .github/workflows/ci.yml              # Pipeline CI GitHub Actions (main & dev)
-├── pom.xml                               # Configuration Maven, Java 21, JUnit 5, JaCoCo, Javadoc
+├── .github/workflows/ci.yml              # GitHub Actions CI pipeline (main & dev)
+├── pom.xml                               # Maven configuration, Java 21, JUnit 5, JaCoCo, Javadoc
 ├── src/
 │   ├── main/java/fr/amu/iut/noel/
-│   │   ├── building/                     # Bâtiments (Building, Dormitory, Enclosure, etc.)
-│   │   ├── character/                    # Personnages (Humanoïdes & Créatures)
-│   │   ├── exception/                    # Exceptions métier personnalisées
-│   │   ├── lycanthrope/                  # Colonie de lycanthropes (meutes, rangs, hurlements)
-│   │   ├── model/                        # Modèle principal (SantaVillage, SantaClaus, enums...)
-│   │   ├── simulation/                   # Boucles temporelles, événements, threads
-│   │   └── ui/                           # Interface utilisateur (CLI / JavaFX)
-│   └── test/java/fr/amu/iut/noel/        # Tests unitaires JUnit 5
+│   │   ├── building/                     # Buildings (Building, Dormitory, Enclosure, etc.)
+│   │   ├── character/                    # Characters (Humanoids)
+│   │   ├── creatures/                    # Creatures (Reindeer, LivingSnowman, NorthSpirit, Lycanthrope)
+│   │   ├── exception/                    # Custom business exceptions
+│   │   ├── interfaces/                   # Behavioral interfaces (Entertainable, Worker)
+│   │   ├── lycanthrope/                  # Lycanthrope colony (packs, ranks, howls)
+│   │   ├── model/                        # Core model (Character, Food, Gender, enums...)
+│   │   ├── simulation/                   # Time loops, random events, threads
+│   │   └── ui/                           # User interface (CLI / JavaFX)
+│   └── test/java/fr/amu/iut/noel/        # JUnit 5 unit tests
 └── README.md
 ```
