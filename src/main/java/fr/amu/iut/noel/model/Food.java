@@ -2,28 +2,19 @@ package fr.amu.iut.noel.model;
 
 public class Food {
     // Privates variables
-    private String name;
-    private int nutritionValue;
+    private final FoodType type;
 
     // Constructor
-    public Food(String name, int nutritionValue) {
-        this.name = name;
-        this.nutritionValue = nutritionValue;
+    public Food(FoodType type) {
+        this.type = type;
     }
 
     // Getters
-    public String getName() {
-        return name;
-    }
-    public int getNutritionValue() {
-        return nutritionValue;
+    public FoodType getType() {
+        return type;
     }
 
-    // Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setNutritionValue(int nutritionValue) {
-        this.nutritionValue = nutritionValue;
+    public int getNutritionValue() {
+        return type.getNutritionalValue();
     }
 }

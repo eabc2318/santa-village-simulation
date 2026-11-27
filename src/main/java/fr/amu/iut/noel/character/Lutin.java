@@ -1,17 +1,26 @@
 package fr.amu.iut.noel.character;
 
-import fr.amu.iut.noel.model.Humanoid;
+import fr.amu.iut.noel.model.*;
+import fr.amu.iut.noel.interfaces.*;
 
-public class Lutin extends Humanoid {
-    public Lutin(String name, String gender, int age) {
+public abstract class Lutin extends Humanoid implements Divertissable, Travaillable {
+    private boolean estFarceur = false;
+
+    public Lutin(String name, Gender gender, int age) {
         super(name, gender, age);
     }
 
     public void entertain() {
-        
+        super.modifyXmasMagic(super.C_activiteMagic);
+    }
+    public void work() {
+        System.out.println("Travaille..");
     }
 
-    public void work() {
-        
+    public void setEstFarceur(boolean estFarceur) {
+        this.estFarceur = estFarceur;
+    }
+    public boolean getEstFarceur() {
+        return estFarceur;
     }
 }

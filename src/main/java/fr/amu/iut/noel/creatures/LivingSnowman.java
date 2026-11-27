@@ -1,9 +1,17 @@
 package fr.amu.iut.noel.creatures;
 
-import fr.amu.iut.noel.model.Humanoid;
+import fr.amu.iut.noel.model.*;
+import fr.amu.iut.noel.interfaces.*;
 
-public class LivingSnowman extends Humanoid {
-    public LivingSnowman(String name, String gender, int age) {
+public class LivingSnowman extends Creature implements Divertissable, Travaillable {
+    public LivingSnowman(String name, Gender gender, int age) {
         super(name, gender, age);
+    }
+
+    public void entertain() {
+        super.modifyXmasMagic(super.C_activiteMagic);
+    }
+    public void work() {
+        System.out.println("Travaille..");
     }
 }
