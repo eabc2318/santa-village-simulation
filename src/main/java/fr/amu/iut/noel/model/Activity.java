@@ -8,4 +8,5 @@ package fr.amu.iut.noel.model;
 public enum Activity {
     /** Playing activity. */
     PLAY
+    // TODO: Work
 }
