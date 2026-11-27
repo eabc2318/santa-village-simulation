@@ -39,6 +39,7 @@ public class LivingSnowman extends Creature implements Entertainable, Worker {
      */
     @Override
     public void work() {
+        // TODO: Work
         System.out.println("Working...");
     }
 }

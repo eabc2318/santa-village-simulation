@@ -37,24 +37,32 @@ public abstract class Character {
     /**
      * Emits a sound.
      */
-    public void emitSound() {}
+    public void emitSound() {
+        // TODO: Work
+    }
 
     /**
      * Moves the character.
      */
-    public void move() {}
+    public void move() {
+        // TODO: Work
+    }
 
     /**
      * Restores the character's energy.
      */
-    public void restore() {}
+    public void restore() {
+        // TODO: Work
+    }
 
     /**
      * Performs a given activity.
      *
      * @param activity the activity to perform
      */
-    public void doActivity(Activity activity) {}
+    public void doActivity(Activity activity) {
+        // TODO: Work
+    }
 
     /**
      * Modifies the character's Christmas magic, clamping it to a minimum of 0.

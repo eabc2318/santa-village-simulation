@@ -39,6 +39,7 @@ public class NorthSpirit extends Creature implements Entertainable, Worker {
      */
     @Override
     public void work() {
+        // TODO: Work
         System.out.println("Working...");
     }
 }

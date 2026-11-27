@@ -39,6 +39,7 @@ public class ChristmasFairy extends Humanoid implements Entertainable, Worker {
      */
     @Override
     public void work() {
+        // TODO: Work
         System.out.println("Working...");
     }
 }

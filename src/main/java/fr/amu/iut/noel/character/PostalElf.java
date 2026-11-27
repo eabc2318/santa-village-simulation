@@ -28,6 +28,7 @@ public class PostalElf extends Humanoid implements Worker {
      */
     @Override
     public void work() {
+        // TODO: Work
         System.out.println("Working...");
     }
 }
