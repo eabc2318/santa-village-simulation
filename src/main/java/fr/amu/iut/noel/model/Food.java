@@ -1,5 +1,9 @@
 package fr.amu.iut.noel.model;
 
+/**
+ * Représente un aliment du village
+ * @author Audren Metery-Drouin
+ */
 public class Food {
     // Privates variables
     private final FoodType type;

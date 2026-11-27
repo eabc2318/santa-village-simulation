@@ -1,5 +1,9 @@
 package fr.amu.iut.noel.model;
 
+/**
+ * Gère les personnages du jeu qu'ils soient des humanoïdes ou des créatures.
+ * @author Audren Metery-Drouin
+ */
 public abstract class Character {
     // Privates variables
     private String name;
@@ -12,7 +16,12 @@ public abstract class Character {
     public final int C_activiteMagic = 5; // Magie gagné lorsque un character réalise son activité
     public final int C_farceMagic = 1; // Magie modifié lorsque un character voit une farce
 
-    // Constructor
+    /**
+     * Constructor of the Character class
+     * @param name le nom du character
+     * @param gender le genre du character
+     * @param age l'âge du character
+     */
     public Character(String name, Gender gender, int age) {
         this.name = name;
         this.gender = gender;
@@ -23,25 +32,54 @@ public abstract class Character {
     }
 
     // Methods
-    public void emitSound() {} // Pour émettre un son
-    public void move() {} // Pour se déplacer
-    public void restore() {} // Pour se restaurer
-    public void doActivity() {} // Pour faire une activité (se reposer est une activité)
+    /**
+     * Permet d'émettre un son
+     */
+    public void emitSound() {}
+
+    /**
+     * Permet de se déplacer
+     */
+    public void move() {}
+
+    /**
+     * Permet de se restaurer
+     */
+    public void restore() {}
+
+    /**
+     * Permet de réaliser une activité
+     * @param activity l'activité realisé
+     */
+    public void doActivity(Activity activity) {}
+
+    /**
+     * Permet de modifier la magie de noël
+     * @param amount
+     */
     public void modifyXmasMagic(int amount) {
         xmasMagic += amount;
         if (xmasMagic < 0) {
             xmasMagic = 0;
         }
-    } // Pour modifier la magie de Noël
+    }
 
+    /**
+     * Permet de manger de la nourriture
+     * @param food
+     */
     public void eat(Food food) {
         hunger -= food.getNutritionValue();
         if (hunger < 0) {
             hunger = 0;
         }
-    } // Pour manger de la nourriture
+    }
 
-    abstract public void voir_farce(Farce farce); // Pour voir une farce
+    /**
+     * Permet de voir une farce
+     * @param farce
+     */
+    abstract public void voir_farce(Farce farce);
 
     // Getters & setters
     public String getName() {
