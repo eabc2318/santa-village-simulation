@@ -1,9 +1,11 @@
 package fr.amu.iut.noel.model;
 
 /**
- * Enumération représentant les différentes activités qu'un personnage peut réaliser dans le jeu.
+ * Enumeration representing the different activities a character can perform in the game.
+ *
  * @author Audren Metery-Drouin
  */
 public enum Activity {
-    JOUER, // Jouer
+    /** Playing activity. */
+    PLAY
 }

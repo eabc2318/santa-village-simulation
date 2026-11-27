@@ -1,36 +1,44 @@
 package fr.amu.iut.noel.creatures;
 
-import fr.amu.iut.noel.model.*;
-import fr.amu.iut.noel.interfaces.*;
+import fr.amu.iut.noel.interfaces.Entertainable;
+import fr.amu.iut.noel.interfaces.Worker;
+import fr.amu.iut.noel.model.Creature;
+import fr.amu.iut.noel.model.Gender;
 
 /**
- * Représente une esprit du nord du village de noël
+ * Represents a northern spirit in Santa's Village.
+ *
  * @author Audren Metery-Drouin
  */
-public class NorthSpirit extends Creature implements Divertissable, Travaillable {
+public class NorthSpirit extends Creature implements Entertainable, Worker {
     /**
-     * Constructeur de la classe esprit du nord
-     * @param name le nom de l'esprit du nord
-     * @param gender le genre de l'esprit du nord
-     * @param age l'âge de l'esprit du nord
+     * Constructor of the {@code NorthSpirit} class.
+     *
+     * @param name   the northern spirit's name
+     * @param gender the northern spirit's gender
+     * @param age    the northern spirit's age
      */
     public NorthSpirit(String name, Gender gender, int age) {
         super(name, gender, age);
     }
 
     /**
-     * Permet de se divertir
-     * @see fr.amu.iut.noel.interfaces.Divertissable#entertain()
+     * Allows the northern spirit to entertain.
+     *
+     * @see fr.amu.iut.noel.interfaces.Entertainable#entertain()
      */
+    @Override
     public void entertain() {
-        super.modifyXmasMagic(super.C_activiteMagic);
+        super.modifyXmasMagic(ACTIVITY_MAGIC);
     }
 
     /**
-     * Permet de travailler
-     * @see fr.amu.iut.noel.interfaces.Travaillable#work()
+     * Allows the northern spirit to work.
+     *
+     * @see fr.amu.iut.noel.interfaces.Worker#work()
      */
+    @Override
     public void work() {
-        System.out.println("Travaille..");
+        System.out.println("Working...");
     }
 }

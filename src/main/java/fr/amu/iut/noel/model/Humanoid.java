@@ -1,26 +1,30 @@
 package fr.amu.iut.noel.model;
 
 /**
- * Représente un humanoïde du village
+ * Represents a humanoid in Santa's Village.
+ *
  * @author Audren Metery-Drouin
  */
 public abstract class Humanoid extends Character {
     /**
-     * Constructeur de la classe Humanoid
-     * @param name le nom de l'humanoïde
-     * @param gender le genre de l'humanoïde
-     * @param age l'âge de l'humanoïde
+     * Constructor of the {@code Humanoid} class.
+     *
+     * @param name   the humanoid's name
+     * @param gender the humanoid's gender
+     * @param age    the humanoid's age
      */
     public Humanoid(String name, Gender gender, int age) {
         super(name, gender, age);
     }
 
     /**
-     * Permet de voir une farce et donc de gagner de la magie de noël en conséquence
-     * @param farce la farce perçue par la créature
-     * @see fr.amu.iut.noel.model.Character#voir_farce(fr.amu.iut.noel.model.Farce)
+     * Witnesses a prank and gains Christmas magic accordingly.
+     *
+     * @param prank the prank witnessed by the humanoid
+     * @see fr.amu.iut.noel.model.Character#witnessPrank(fr.amu.iut.noel.model.Prank)
      */
-    public void voir_farce(Farce farce) {
-        super.modifyXmasMagic(super.C_farceMagic);
+    @Override
+    public void witnessPrank(Prank prank) {
+        super.modifyXmasMagic(PRANK_MAGIC);
     }
 }

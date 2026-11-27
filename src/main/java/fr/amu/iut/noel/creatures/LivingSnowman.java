@@ -1,36 +1,44 @@
 package fr.amu.iut.noel.creatures;
 
-import fr.amu.iut.noel.model.*;
-import fr.amu.iut.noel.interfaces.*;
+import fr.amu.iut.noel.interfaces.Entertainable;
+import fr.amu.iut.noel.interfaces.Worker;
+import fr.amu.iut.noel.model.Creature;
+import fr.amu.iut.noel.model.Gender;
 
 /**
- * Représente un bonhomme de neige vivant du village de noël
+ * Represents a living snowman in Santa's Village.
+ *
  * @author Audren Metery-Drouin
  */
-public class LivingSnowman extends Creature implements Divertissable, Travaillable {
+public class LivingSnowman extends Creature implements Entertainable, Worker {
     /**
-     * Constructeur de la classe bonhomme de neige vivant
-     * @param name
-     * @param gender
-     * @param age
+     * Constructor of the {@code LivingSnowman} class.
+     *
+     * @param name   the living snowman's name
+     * @param gender the living snowman's gender
+     * @param age    the living snowman's age
      */
     public LivingSnowman(String name, Gender gender, int age) {
         super(name, gender, age);
     }
 
     /**
-     * Permet de se divertir
-     * @see fr.amu.iut.noel.interfaces.Divertissable#entertain()
+     * Allows the living snowman to entertain.
+     *
+     * @see fr.amu.iut.noel.interfaces.Entertainable#entertain()
      */
+    @Override
     public void entertain() {
-        super.modifyXmasMagic(super.C_activiteMagic);
+        super.modifyXmasMagic(ACTIVITY_MAGIC);
     }
 
     /**
-     * Permet de travailler
-     * @see fr.amu.iut.noel.interfaces.Travaillable#work()
+     * Allows the living snowman to work.
+     *
+     * @see fr.amu.iut.noel.interfaces.Worker#work()
      */
+    @Override
     public void work() {
-        System.out.println("Travaille..");
+        System.out.println("Working...");
     }
 }
